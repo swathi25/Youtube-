@@ -1,12 +1,13 @@
-import React from "react";
 import ButtonList from "./ButtonList";
 import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div>
+    <div className=" mt-32">
       <ButtonList />
-      <VideoContainer />
+      <div className="mt-6 flex flex-wrap gap-6">
+        <VideoContainer />
+      </div>
     </div>
   );
 };
