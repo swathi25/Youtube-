@@ -48,48 +48,55 @@ const Head = () => {
     dispatch(toggleMenu());
   };
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="grid grid-cols-[auto_1fr_auto] p-3 mx-4 gap-6 max-w-6xl mx-auto items-center justify-items-center">
-        <div className="flex items-center gap-2 col-span-1">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm h-16">
+      <div className="flex items-center px-6 h-full">
+        {/* Left */}
+        <div className="flex items-center gap-2">
           <img
-            onClick={() => {
-              toggleMenuHandler();
-            }}
+            onClick={toggleMenuHandler}
             className="h-8 w-8 cursor-pointer"
             alt="menu"
             src={MENU_ICON}
           />
           <img
-            className="h-24 w-24 cursor-pointer"
+            className="h-16 w-20 cursor-pointer"
             src={YOUTUBE_ICON}
             alt="youtube icon"
           />
         </div>
-        <div className="flex items-center relative w-full max-w-md mx-auto">
-          <input
-            className="flex-1 px-5 py-3.5 text-lg border border-gray-200 rounded-l-full shadow-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50"
-            type="text"
-            placeholder="Search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={(e) => setShowSuggestions(true)}
-            onBlur={(e) => setShowSuggestions(false)}
-          />
-          <button className="px-5 py-3.5 text-lg bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-r-full font-medium transition-all duration-200 hover:shadow-md">
-            Search
-          </button>
+
+        {/* Center */}
+        <div className="flex-1 flex justify-center relative">
+          <div className="flex items-center w-full max-w-xl">
+            <input
+              className="flex-1 px-5 py-3.5 text-lg border rounded-l-full"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setShowSuggestions(false)}
+            />
+            <button className="px-5 py-3.5 bg-gray-100 rounded-r-full">
+              Search
+            </button>
+          </div>
+
           {showSuggestions && (
-            <div className="!bg-white border border-gray-300 rounded-xl shadow-2xl z-[1000] mt-2 max-h-64 overflow-y-auto w-full absolute top-full left-0 right-0 backdrop-blur-sm">
+            <div className="absolute top-full mt-2 w-full max-w-xl bg-white shadow-xl rounded-xl">
               <ul>
                 {suggestions.map((s) => (
-                  <li className="py-2 shadow-sm">{s}</li>
+                  <li key={s} className="py-2 px-4 hover:bg-gray-100">
+                    {s}
+                  </li>
                 ))}
               </ul>
             </div>
           )}
         </div>
-        <div className="flex justify-end ml-auto shrink-0">
-          <img className="h-8 w-12 " alt="user-icon" src={USER_ICON} />
+
+        {/* Right */}
+        <div className="ml-auto">
+          <img className="h-8 w-12" alt="user-icon" src={USER_ICON} />
         </div>
       </div>
     </div>

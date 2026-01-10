@@ -3,13 +3,9 @@ import SideBar from "./SideBar";
 
 const Body = () => {
   return (
-    <div className="flex h-screen overflow-hidden">
-      {" "}
-      {/* Full viewport, no scroll on flex */}
+    <div className="pt-20 flex">
       <SideBar />
-      <div className="flex-1 overflow-y-auto pt-14 pl-4 pr-4">
-        {" "}
-        {/* Scroll only content */}
+      <div className="ml-56 px-6">
         <Outlet />
       </div>
     </div>

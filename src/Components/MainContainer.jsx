@@ -3,11 +3,10 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div className=" mt-32">
+    <div className="pt-24 px-6">
       <ButtonList />
-      <div className="mt-6 flex flex-wrap gap-6">
-        <VideoContainer />
-      </div>
+
+      <VideoContainer />
     </div>
   );
 };

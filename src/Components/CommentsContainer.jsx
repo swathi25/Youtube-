@@ -1,7 +1,5 @@
 const CommentsContainer = () => {
-  return (
-    <div className="bg-purple-600 p-10 m-10 text-white">CommentsContainer</div>
-  );
+  return <div className=" p-10 m-20 text-black">CommentsContainer</div>;
 };
 
 export default CommentsContainer;
