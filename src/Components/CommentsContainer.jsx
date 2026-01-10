@@ -1,15 +1,6 @@
 const CommentsContainer = () => {
   return (
-    <div
-      style={{
-        padding: "8px",
-        margin: "8px",
-        backgroundColor: "yellow", // Visual confirmation
-        border: "2px solid red",
-      }}
-    >
-      CommentsContainer
-    </div>
+    <div className="bg-purple-600 p-10 m-10 text-white">CommentsContainer</div>
   );
 };
 

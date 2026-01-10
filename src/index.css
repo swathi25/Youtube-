@@ -5,7 +5,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-#root {
-  padding-top: 0 !important; /* overrides Vite default */
-}
